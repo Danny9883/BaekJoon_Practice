@@ -1,0 +1,5 @@
+text=list(input())
+a=len(text)
+b=text.count(":")
+c=text.count("_")
+print(a+b+c*5)
