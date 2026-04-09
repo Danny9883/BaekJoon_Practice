@@ -6,20 +6,21 @@ input=sys.stdin.readline
 t,e=map(int,input().split())
 s=int(input())
 
+d=[float('INF')]*(t+1)
 
 graph=list([] for _ in range(t+1))
 
 for i in range(e):
   a,b,w=map(int,input().split())
+  if b==s:
+    continue
   graph[a].append((w,b))
 
 
 
-d=[float('INF')]*(t+1)
 heap = []
 heappush(heap,(0,s))
 d[s] = 0
-
 while heap:
   w,v=heappop(heap)
   if d[v] < w:
